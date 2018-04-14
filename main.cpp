@@ -43,16 +43,16 @@ void draw_ram(Ram ram) {
     cout << ram.get_used() << "/" << ram.get_total() << " kB" << endl;
 }
 
-#define N_CPUS 8
 int main() {
+    int n_cpus = sysconf(_SC_NPROCESSORS_ONLN);
     vector<Cpu*> cpus;
-    for (int i=0; i<N_CPUS; i++) {
+    for (int i=0; i<n_cpus; i++) {
         cpus.push_back(new Cpu(i));
     }
     Ram ram;
 
     for (;;) {
-        draw_cpus(cpus, N_CPUS);
+        draw_cpus(cpus, n_cpus);
         cout << endl;
         draw_ram(ram);
         cout << "\033[2J\033[1;1H"; // clears the console
