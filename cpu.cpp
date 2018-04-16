@@ -2,8 +2,8 @@ class Cpu {
 private:
   int core;
 public:
-  Cpu(int core){
-    this.core = core;
+  Cpu(int cored){
+    core = cored;
   }
 
   int get_used(){
@@ -42,6 +42,6 @@ public:
       ((float)(work_jiffies_1 - work_jiffies_0) /
       (float)(total_jiffies_1 - total_jiffies_0))
       * 100
-    ) 
+    );
   }
 };
