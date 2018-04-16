@@ -29,7 +29,8 @@ class Ram {
       float percent;
       int used = get_used();
       int total = get_total();
-      percent = (float)total *100 / (float)used;
+      percent = ((float)used/(float)total) * 100;
+      cout << used << " " << total << " " << percent << endl;
       return (int)percent;
     }
 };
