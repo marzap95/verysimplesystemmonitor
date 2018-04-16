@@ -20,7 +20,10 @@ public:
       getline(inputfile, line);
     }
     for(int i = 0; i < 11; i++){
-      if(i == 0) continue;
+      if(i == 0){
+        inputfile >> line;
+        continue;
+      }
       inputfile >> x;
       if(i < 4) work_jiffies_0+=x;
       total_jiffies_0+=x;
